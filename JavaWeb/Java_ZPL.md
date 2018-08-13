@@ -1,6 +1,6 @@
 ---
 title: Java 两种打印方式--JPL
-tags: JavaWeb，打印,JPL,ZPL
+tags: JavaWeb,打印,JPL,ZPL
 grammar_cjkRuby: true
 ---
 **wyoung**
