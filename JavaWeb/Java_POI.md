@@ -83,44 +83,19 @@ public void apacheCollection () {
             *
             */
 
-            sheet.getRow(1 + count * 16).getCell(1).setCellValue(String.valueOf(header.get("print_date")));
-            sheet.getRow(1 + count * 16).getCell(5).setCellValue(String.valueOf(header.get("shipping_type")));//运输方式
-            sheet.getRow(1 + count * 16).getCell(7).setCellValue(String.valueOf(header.get("refer_receipt_code")));//交货单号
-            sheet.getRow(1 + count * 16).getCell(10).setCellValue("第" + (count + 1) + "页，共" + size + "页");//页数
-            sheet.getRow(2 + count * 16).getCell(1).setCellValue(String.valueOf(header.get("receive_name")));// 客户名称
-            sheet.getRow(2 + count * 16).getCell(5).setCellValue(String.valueOf(header.get("tel")));
-            sheet.getRow(3 + count * 16).getCell(1).setCellValue(String.valueOf(header.get("address")));// 地址
-            sheet.getRow(3 + count * 16).getCell(5).setCellValue(String.valueOf(header.get("fix")));
-            sheet.getRow(4 + count * 16).getCell(1).setCellValue(String.valueOf(header.get("contact_person")));// 人员
-            sheet.getRow(4 + count * 16).getCell(5).setCellValue(String.valueOf(header.get("contact_phone")));
+           
 
 
             //在相应的单元格进行赋值--item
-            double sum_page = 0;
-            for (int i = 0; i < printItem.size(); i++) {
-
-                sheet.getRow(6 + i + count * 16).getCell(0).setCellValue(String.valueOf(item.get(i).get("mat_code")));
-                sheet.getRow(6 + i + count * 16).getCell(1).setCellValue(String.valueOf(item.get(i).get("mat_name")));
-                sheet.getRow(6 + i + count * 16).getCell(2).setCellValue(String.valueOf(item.get(i).get("unit_name")));
-                sheet.getRow(6 + i + count * 16).getCell(3).setCellValue(String.valueOf(item.get(i).get("sale_price")));//销售价
-                sheet.getRow(6 + i + count * 16).getCell(4).setCellValue(String.valueOf(item.get(i).get("discount")));//折扣
-                sheet.getRow(6 + i + count * 16).getCell(5).setCellValue(String.valueOf(item.get(i).get("price")));//单价
-                sheet.getRow(6 + i + count * 16).getCell(6).setCellValue(String.valueOf(item.get(i).get("qty")));
-                sheet.getRow(6 + i + count * 16).getCell(7).setCellValue(String.valueOf(item.get(i).get("tax")));//税率
-                sheet.getRow(6 + i + count * 16).getCell(8).setCellValue(String.valueOf(item.get(i).get("sum_price")));//价税合计
-                sum_page += Double.parseDouble(String.valueOf(item.get(i).get("sum_price")));
-                sheet.getRow(6 + i + count * 16).getCell(9).setCellValue(String.valueOf(header.get("stock_output_code"))); //合同号
-                sheet.getRow(6 + i + count * 16).getCell(10).setCellValue(String.valueOf(item.get(i).get("remark")));
-                // rowNum++;
-            }
+           /**
+            *
+            */
 
 
             //在相应的单元格进行赋值--底栏
-            sheet.getRow(13 + count * 16).getCell(7).setCellValue(sum_page);
-            sheet.getRow(14 + count * 16).getCell(2).setCellValue(Common.getRMB(new BigDecimal(String.valueOf(header.get("sum")))));
-            sheet.getRow(14 + count * 16).getCell(7).setCellValue(Double.parseDouble(String.valueOf(header.get("sum"))));
-            sheet.getRow(15 + count * 16).getCell(4).setCellValue(String.valueOf(header.get("create_user")));
-            sheet.getRow(15 + count * 16).getCell(9).setCellValue(String.valueOf(header.get("print_user")));
+           /**
+            *
+            */
 
 
             if (count < size - 1) {
