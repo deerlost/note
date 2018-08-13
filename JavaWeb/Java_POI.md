@@ -1,6 +1,6 @@
 ---
 title: Java 两种打印方式--POI
-tags: 新建,模板,小书匠
+tags: JavaWeb,打印
 grammar_cjkRuby: true
 ---
 **wyoung**
@@ -64,8 +64,9 @@ public void apacheCollection () {
 ```
 在应用中一个实现案例,每页打印**固定**7条行项目，底栏不变:
 
-```  int count = 0;
-        int size = 0;
+``` 
+			int count = 0;
+        int size = 0; //总共的页数
         if (item.size() % 7 == 0) {
             size = item.size() / 7;
         } else {
@@ -109,7 +110,7 @@ public void apacheCollection () {
                     }
                 }
             }
-
+			//分页
             sheet.setRowBreak(16 + count * 16);
             count++;
 
