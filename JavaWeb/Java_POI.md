@@ -131,7 +131,7 @@ public void apacheCollection () {
 ```  
 // 转换pdf
 //考虑到实际生产环境,端口号放在了配置文件properties中
-        OpenOfficeConnection connection = new 			   SocketOpenOfficeConnection(Integer.parseInt(PropertiesUtil.getInstance().getPort()));
+        OpenOfficeConnection connection = new SocketOpenOfficeConnection(Integer.parseInt(PropertiesUtil.getInstance().getPort()));
         connection.connect();
         DocumentConverter converter = new OpenOfficeDocumentConverter(connection);
         File inputFile = new File(OutXlsxFile);
