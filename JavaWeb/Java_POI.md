@@ -143,18 +143,19 @@ public void apacheCollection () {
 
 ``` 
 		//根据不用的系统
-		String[] as = OutPdfFile.split(PropertiesUtil.getInstance().getSeparator());
+        String[] as = OutPdfFile.split(PropertiesUtil.getInstance().getSeparator());
         String fileName = as[as.length - 1];
 		
 ```
 如果是根据内容复制条目信息，则有可能遇到复制行数超过4000行的情况。此时会报**Caused by: java.lang.IllegalStateException**异常，是由于cell styles创建过多造成,此时推荐使用google guava缓存样式。
 
-``` /**
+``` 
+	/**
 	 * 行复制功能
 	 *
 	 * @param fromRow
 	 * @param toRow
-	 * @param copyValueFlag(true时复制value)
+	 * @param copyValueFlag (true 复制value)
 	 * @throws Exception
 	 */
 	@SuppressWarnings("rawtypes")
@@ -178,7 +179,12 @@ public void apacheCollection () {
 			}
 		}
 	}
-``` /**
+
+``` 
+
+
+``` 
+/**
 	 * @Description: TODO(超过4000时使用的)</br>
 	 * @Title: CopyCell </br>
 	 * @param @param
@@ -196,9 +202,8 @@ public void apacheCollection () {
 	 * @author wyang
 	 */
 	public static void CopyCell(Workbook wb, Cell srcCell, Cell distCell, boolean copyValueFlag) throws Exception {
-		//样式缓存
+		// ICellStyle newstyle = toWb.CreateCellStyle();
 		CellStyle newStyle = CreateCellStyle(wb, srcCell.getCellStyle());
-		
 		CellStyle srcStyle = srcCell.getCellStyle();
 		newStyle.cloneStyleFrom(srcStyle);
 		newStyle.setFont(wb.getFontAt(srcStyle.getFontIndex()));
@@ -232,7 +237,11 @@ public void apacheCollection () {
 			}
 		}
 	}
-``` /**
+```
+
+
+``` 
+/**
 	 * @Title: getCellStyleCache </br>
 	 * @Description: TODO(样式缓存)</br>
 	 * @param @param
@@ -260,7 +269,7 @@ public void apacheCollection () {
 				});
 		// cache.invalidateAll();
 		return fromStyle;
-		return null;
 	}
 ```
+
 此外还有一些关POI对Row和Region的处理就不一一述说了。
