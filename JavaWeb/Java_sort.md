@@ -464,3 +464,50 @@ class MyPoint extends Point implements Comparable<Point> {
 没有1和-1，排序方法无效
 ## 数据库排序 ##
 ORDER BY [列名,列别名,列序号] [ASC, DESC];
+## 相关算法 ##
+### 集合类型 ###
+集合类型主要有3种：set(集）、list(列表）和map(映射)。
+集合类存放的都是对象的引用，而非对象本身，所以列表只能存储引用类型
+集合接口分为：Collection和Map，list、set实现了Collection接口
+
+### 单轴快速排序（SinglePivotQuickSort）
+步骤如下：
+如果待排序的数组项数为0或1，直接返回。(递归出口)
+在待排序的数组中任选一个元素，作为中心点(pivot)。
+将小于pivot的元素，大于pivot的元素划分为开来。也就是将小于中心点的元素放在中心点前面，大于中心点的元素放在中心点后面。
+对前面小于pivot的元素进行快速排序，对大于pivot的元素进行快速排序。
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/1.png?raw=true)
+ 
+### 双轴快速排序（DualPivotQuickSort）
+双轴快速排序，顾名思义，取两个中心点pivot1，pivot2，且pivot≤pivot2，可将序列分成三段：x<pivot1、pivot1≤x≤pivot2，x<pivot2，然后分别对三段进行递归。基本过程如下图：
+![enter description here](https://github.com/deerlost/note/blob/master/source/img/2.png?raw=true)
+ 
+### 归并排序（MergeSort）
+合并排序是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。
+合并排序是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。
+![enter description here](https://github.com/deerlost/note/blob/master/source/img/3.png?raw=true)
+ 
+归并排序的核心思想是将两个有序的数列合并成一个大的有序的序列。通过递归，层层合并，即为归并。
+如图，从下到上，每一步都需要将两个已经有序的子数组合并成一个大的有序数组
+![enter description here](https://github.com/deerlost/note/blob/master/source/img/4.png?raw=true)
+ 
+### 红黑树（Red-Black tree）
+红黑树（Red Black Tree） 是一种自平衡二叉查找树
+红黑树是每个节点都带有颜色属性的二叉查找树，颜色或红色或黑色。
+在二叉查找树强制一般要求以外，对于任何有效的红黑树我们增加了如下的额外要求:
+
+性质1 节点是红色或黑色。
+性质2 根节点是黑色。
+性质3 每个叶节点（NIL节点，空节点）是黑色的。
+性质4 每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)
+性质5. 从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。
+#### 左旋
+左旋的过程是将x的右子树绕x逆时针旋转，使得x的右子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
+![enter description here](https://github.com/deerlost/note/blob/master/source/img/5.png?raw=true)
+ 
+#### 右旋
+右旋的过程是将x的左子树绕x顺时针旋转，使得x的左子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
+![enter description here](https://github.com/deerlost/note/blob/master/source/img/6.png?raw=true)
+ 
+
+
