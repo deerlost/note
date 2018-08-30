@@ -480,16 +480,16 @@ ORDER BY [列名,列别名,列序号] [ASC, DESC];
  
 ### 双轴快速排序（DualPivotQuickSort）
 双轴快速排序，顾名思义，取两个中心点pivot1，pivot2，且pivot≤pivot2，可将序列分成三段：x<pivot1、pivot1≤x≤pivot2，x<pivot2，然后分别对三段进行递归。基本过程如下图：
-![enter description here](https://github.com/deerlost/note/blob/master/source/img/2.png?raw=true)
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/2.png?raw=true)
  
 ### 归并排序（MergeSort）
 合并排序是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。
 合并排序是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。
-![enter description here](https://github.com/deerlost/note/blob/master/source/img/3.png?raw=true)
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/3.png?raw=true)
  
 归并排序的核心思想是将两个有序的数列合并成一个大的有序的序列。通过递归，层层合并，即为归并。
 如图，从下到上，每一步都需要将两个已经有序的子数组合并成一个大的有序数组
-![enter description here](https://github.com/deerlost/note/blob/master/source/img/4.png?raw=true)
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/4.png?raw=true)
  
 ### 红黑树（Red-Black tree）
 红黑树（Red Black Tree） 是一种自平衡二叉查找树
@@ -503,11 +503,11 @@ ORDER BY [列名,列别名,列序号] [ASC, DESC];
 性质5. 从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。
 #### 左旋
 左旋的过程是将x的右子树绕x逆时针旋转，使得x的右子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
-![enter description here](https://github.com/deerlost/note/blob/master/source/img/5.png?raw=true)
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/5.png?raw=true)
  
 #### 右旋
 右旋的过程是将x的左子树绕x顺时针旋转，使得x的左子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
-![enter description here](https://github.com/deerlost/note/blob/master/source/img/6.png?raw=true)
+![enter description here](https://github.com/deerlost/note/raw/master/source/img/6.png?raw=true)
  
 
 
