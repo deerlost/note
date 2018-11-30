@@ -1,0 +1,43 @@
+warning: LF will be replaced by CRLF in Git/常用的Git命令.md.
+The file will have its original line endings in your working directory
+[1mdiff --git "a/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md" "b/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md"[m
+[1mindex 721f99e..b229535 100644[m
+[1m--- "a/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md"[m
+[1m+++ "b/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md"[m
+[36m@@ -1,6 +1,6 @@[m
+ ---[m
+ title: 常用的Git命令[m
+[31m-tags: [m
+[32m+[m[32mtags:  Git[m
+ grammar_cjkRuby: true[m
+ ---[m
+ **wyoung**[m
+[36m@@ -15,7 +15,7 @@[m [mgit push -u origin master[m
+  ### git diff ### [m
+  [m
+  3. git diff < branch1 >  < branch > &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--将自己的分支和其他分支进行对比[m
+[31m- 4. git diff --cached&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--对比暂存区和当前的HEAD[m
+[32m+[m[32m 4. git diff --cached&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--对比暂存区和当前的HEAD所指向的branch[m
+  ### 恢复暂存区 ###[m
+  [m
+  5. git rm path/to/file --cached &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--将文件从暂存区索引中删除[m
+[36m@@ -30,10 +30,18 @@[m [mgit push -u origin master[m
+ [m
+  10. git stash --include-untracked &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--临时保存未追踪的文件[m
+  11. git stash list &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--列出临时储藏区中的内容[m
+[32m+[m
+  ### 历史记录[m
+  git log 命令可以显示HEAD、所有提交的ID以及分支信息[m
+  [m
+  12. git show COMMIT-ID/HEAD/BRANCH &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--显示上述信息[m
+  13. git diff HEAD HEAD-2 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--对比当前HEAD和前两个提交[m
+  14. git log --patch &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--展示每个提交中更详细的信息[m
+[32m+[m
+[32m+[m[32m### 补丁操作(生产patch和打入patch)[m
+[32m+[m
+[32m+[m[32mgit format-patch生成的补丁文件默认从1开始顺序编号，并使用对应提交信息中的第一行作为文件名。如果使用了-- numbered-files选项，则文件名只有编号，不包含提交信息；如果指定了--stdout选项，可指定输出位置，如当所有patch输出到一个文件；可指定-o <dir>指定patch的存放目录；[m
+[32m+[m
+[32m+[m[32m 15. git format-patch -M master[m
+[41m+[m
+  [m
+\ No newline at end of file[m
