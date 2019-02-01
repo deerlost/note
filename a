@@ -1,0 +1,54 @@
+[33mcommit bd5d3ce87f0f75a64cd22c2aab2e07c03e965e18[m
+tree ba35c741375c93941f65f4c87a3a63929bb3ce35
+parent 09c7820ef3676523f63be96f72d13a7d5a34e3ea
+author deerlost <deerloseforest@163.com> 1535005008 +0800
+committer deerlost <deerloseforest@163.com> 1535005008 +0800
+
+    add notes of git and hexo
+
+[1mdiff --git "a/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md" "b/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md"[m
+[1mnew file mode 100644[m
+[1mindex 0000000..721f99e[m
+[1m--- /dev/null[m
+[1m+++ "b/Git/\345\270\270\347\224\250\347\232\204Git\345\221\275\344\273\244.md"[m
+[36m@@ -0,0 +1,39 @@[m
+[32m+[m[32m---[m
+[32m+[m[32mtitle: 常用的Git命令[m
+[32m+[m[32mtags:[m[41m [m
+[32m+[m[32mgrammar_cjkRuby: true[m
+[32m+[m[32m---[m
+[32m+[m[32m**wyoung**[m
+[32m+[m
+[32m+[m[32m## 前言 ##[m
+[32m+[m
+[32m+[m[32m 1. git ls-files --stage  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; --查看保存在stage的文件[m[41m [m
+[32m+[m[32m 2. git rm -r --cached .idea  #--cached不会把本地的.idea删除[m
+[32m+[m[32mgit commit -m 'delete .idea dir'[m
+[32m+[m[32mgit push -u origin master[m[41m 	[m
+[32m+[m[32m&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--在 GitHub.com 上删除某个 Repository 中的某个文件夹[m
+[32m+[m[32m ### git diff ###[m[41m [m
+[32m+[m[41m [m
+[32m+[m[32m 3. git diff < branch1 >  < branch > &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--将自己的分支和其他分支进行对比[m
+[32m+[m[32m 4. git diff --cached&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--对比暂存区和当前的HEAD[m
+[32m+[m[32m ### 恢复暂存区 ###[m
+[32m+[m[41m [m
+[32m+[m[32m 5. git rm path/to/file --cached &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--将文件从暂存区索引中删除[m
+[32m+[m[32m 6. git rm file -f &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--完全删除文件[m
+[32m+[m[32m ### git reset[m
+[32m+[m[41m [m
+[32m+[m[32m 7. git reset --hard &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--去除所有修改,包括索引中的内容和工作目录中的修改[m
+[32m+[m[32m 8. git reset --mixed &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--重置索引[m
+[32m+[m[32m 9. git reset --soft&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; --修改分支的HEAD[m
+[32m+[m[32m### git stash[m
+[32m+[m[32m 可以通过git stash pop 命令将之前的改动恢复过来，但是如果工作目录中有未追踪的文件，默认情况下不会将其存入临时储藏区。[m
+[32m+[m
+[32m+[m[32m 10. git stash --include-untracked &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--临时保存未追踪的文件[m
+[32m+[m[32m 11. git stash list &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--列出临时储藏区中的内容[m
+[32m+[m[32m ### 历史记录[m
+[32m+[m[32m git log 命令可以显示HEAD、所有提交的ID以及分支信息[m
+[32m+[m[41m [m
+[32m+[m[32m 12. git show COMMIT-ID/HEAD/BRANCH &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--显示上述信息[m
+[32m+[m[32m 13. git diff HEAD HEAD-2 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--对比当前HEAD和前两个提交[m
+[32m+[m[32m 14. git log --patch &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--展示每个提交中更详细的信息[m
+[32m+[m[41m [m
+\ No newline at end of file[m
